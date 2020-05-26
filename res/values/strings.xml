@@ -1,0 +1,13 @@
+<resources>
+
+    <string name="app_name">PhysioFT_MLP</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_main">PhysioFT_MLP</string>
+    <string name="guideline">
+        PhysioFT. To record: Put your finger over\n
+		the camera. Point the camera at	constant\n
+		medium outdoors light. Press Start.\n
+		After at least 512 Frames, Stop.
+    </string>
+    <string name="zero">0</string>
+</resources>

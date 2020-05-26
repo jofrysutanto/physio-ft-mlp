@@ -1,0 +1,58 @@
+CameraHRSpO2.java analysis
+
+Arrays:
+	final int arraySize = 4; //Size of arrays used to store red value and system time. 1000?
+	private int[] frameRed; // to store red value of each frame, so can find peak
+	private long[] frameTime; //to store time of each frame
+	private double[] frameHue; // to store hue of each frame
+	boolean[] isPeakTime?
+
+STATIC METHOD: decodeYUV420SPtoRedAvg(data, camera...Preview width, camera....Preview height)
+	define sample area 50x50 pixels in middle of frame
+	sample every 5th row, every 5th column, so should be about 100 pixels
+	for each sample pixel
+		get YUV, calculate RGB, add R to frameRedSum for intensity check
+		from RGB calculate Hue, centered around 0.0 in radians
+	find average per pixel - hueCurrent, redCurrent
+	- those feed back into PreviewCallback
+
+METHOD: isPeak()
+	algorithm for 4 sequential frameRed[] (intensity) levels: up (1->2) - up (2->3) - down (3->4)
+	SHOULD USE MOST RECENT 4
+	Called only from PreviewCallBack previewCB
+
+	METHOD: resetVals()
+	resets parameters, arrays, etc
+	
+START: onCreate()
+	create Dialog guideline() and open it
+	create arrays for data (see above)
+	create Button saveHR to return to previous app
+	create Views for results
+	
+OBJECT: SurfaceHolder.Callback surfaceCB
+	opens camera, sets preview frame size
+	
+ToggleButton Listener: to start - stop video collection and analysis
+
+OBJECT: PreviewCallback previewCB
+	calls decodeYUV420SPtoRedAvg(data, camera...Preview width, camera....Preview height)
+		to get a frame and extract red intensity and hueCurrent
+	
+	from hueCurrent finds hue min max ave SD and puts them into Views (cf onCreate())
+	from redCurrent finds red min max ave SD and puts them into Views (cf onCreate())
+	from hueAve, SD, Min finds SpO_Current via Lee's regression equation from Tibet trip (altitude)
+	from SpO_Current finds SpO min max ave SD and puts them into Views (cf onCreate())
+	
+	stores frameRedSum (intensity) in last cell of frameRed[] - MOST RECENT FRAME VALUES
+	stores frameHueSum ??
+	stores currentTimeMillis() in last cell of frameTime[]
+	
+	checks if isPeak() using last 4 values in frameRed[] (at least 4th peak before can analyze)
+		finds HRCurrent
+		from HRCurrent finds min max ave SD and puts them into Views (cf onCreate())
+	
+	at end shifts frameRed[] etc arrays down 1 to allow for next data point at top
+	- REPLACE THIS WITH most recent frameRed[] index
+
+

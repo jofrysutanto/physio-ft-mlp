@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal" >
+
+    <SurfaceView
+        android:id="@+id/cameraPreview"
+        android:layout_width="200dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="5dp" />
+
+    <TableLayout 
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:stretchColumns = "*" >
+		<TableRow>
+			<ToggleButton
+				android:id="@+id/toggleStartStop"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:onClick="onStartStopClicked"
+				android:text="ToggleButton"
+				android:textOff=" Start "
+				android:textOn=" Stop "
+				android:textSize="8pt" />
+			<Button
+				android:id="@+id/calc"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="CalcHR FT" />
+			<Button
+				android:id="@+id/save"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Save" />
+		</TableRow>
+		<TableRow>
+			<Button
+				android:id="@+id/train"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Train BP" />
+			<Button
+				android:id="@+id/getBP"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Guess BP" />
+			<Button
+				android:id="@+id/quit"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Quit" />
+        </TableRow>
+    </TableLayout>
+	<TableLayout 
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:stretchColumns = "*" >
+		<TableRow>
+            <TextView
+                android:id="@+id/tvTimeLbl"
+                android:text="Sec"
+                android:textSize="8pt" />
+            <TextView
+                android:id="@+id/tvTimeValue"
+                android:text="@string/zero"
+                android:textSize="8pt" />
+			<TextView
+                android:id="@+id/tvNpxLbl"
+                android:text="Frm"
+                android:textSize="8pt" />
+            <TextView
+                android:id="@+id/tvNpxValue"
+                android:text="@string/zero"
+                android:textSize="8pt" />
+			<TextView
+                android:id="@+id/tvFrmSecLbl"
+                android:text="FpS"
+                android:textSize="8pt" />
+            <TextView
+                android:id="@+id/tvFrmSecValue"
+                android:text="@string/zero"
+                android:textSize="8pt" />
+        </TableRow>
+    </TableLayout>
+	<TableLayout 
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:stretchColumns = "*" >
+        <TableRow>
+            <TextView
+                android:id="@+id/tvUpLeft"
+                android:text="---"
+                android:textSize="8pt" />
+            <TextView
+                android:id="@+id/tvCurrent"
+                android:text="Now"
+                android:textSize="8pt" />
+            <TextView
+                android:id="@+id/tvAvg"
+                android:text="Avg"
+                android:textSize="8pt" />
+            <TextView
+                android:id="@+id/tvMin"
+                android:text="Min"
+                android:textSize="8pt" />
+            <TextView
+                android:id="@+id/tvMax"
+                android:text="Max"
+                android:textSize="8pt" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:id="@+id/tvYLbl"
+                android:text="Bri"
+                android:textSize="8pt" />
+            <TextView
+                android:id="@+id/tvYValue"
+                android:text="@string/zero"
+                android:textSize="8pt" />
+            <TextView
+                android:id="@+id/tvYAvgValue"
+                android:text="@string/zero"
+                android:textSize="8pt" />
+            <TextView
+                android:id="@+id/tvYFrameAveMinValue"
+                android:text="@string/zero"
+                android:textSize="8pt" />
+            <TextView
+                android:id="@+id/tvYFrameAveMaxValue"
+                android:text="@string/zero"
+                android:textSize="8pt" />
+        </TableRow>
+    <!--    <TableRow>
+            <TextView
+                android:id="@+id/tvULbl"
+                android:text="U"
+                android:textSize="8pt" />
+            <TextView
+                android:id="@+id/tvUValue"
+                android:text="@string/zero"
+                android:textSize="8pt" />
+            <TextView
+                android:id="@+id/tvUAvgValue"
+                android:text="@string/zero"
+                android:textSize="8pt" />
+            <TextView
+                android:id="@+id/tvUFrameAveMinValue"
+                android:text="@string/zero"
+                android:textSize="8pt" />
+            <TextView
+                android:id="@+id/tvUFrameAveMaxValue"
+                android:text="@string/zero"
+                android:textSize="8pt" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:id="@+id/tvVLbl"
+                android:text="V"
+                android:textSize="8pt" />
+            <TextView
+                android:id="@+id/tvVValue"
+                android:text="@string/zero"
+                android:textSize="8pt" />
+            <TextView
+                android:id="@+id/tvVAvgValue"
+                android:text="@string/zero"
+                android:textSize="8pt" />
+            <TextView
+                android:id="@+id/tvVFrameAveMinValue"
+                android:text="@string/zero"
+                android:textSize="8pt" />
+            <TextView
+                android:id="@+id/tvVFrameAveMaxValue"
+                android:text="@string/zero"
+                android:textSize="8pt" />
+        </TableRow> -->
+		<TableRow>
+            <TextView
+                android:id="@+id/tvHRLbl"
+                android:text="HRcnt"
+                android:textSize="8pt" />
+            <TextView
+                android:id="@+id/tvRespLbl"
+                android:text="Resp"
+                android:textSize="8pt" />
+            <TextView
+                android:id="@+id/tvSpOLbl"
+                android:text="SpO2"
+                android:textSize="8pt" />
+        </TableRow>
+		<TableRow>
+			<TextView
+                android:id="@+id/tvHRAvgValue"
+                android:text="@string/zero"
+                android:textSize="8pt" />
+			<TextView
+                android:id="@+id/tvRespAvgValue"
+                android:text="@string/zero"
+                android:textSize="8pt" />
+			<TextView
+                android:id="@+id/tvSpOValue"
+                android:text="@string/zero"
+                android:textSize="8pt" />
+		</TableRow>
+		<TableRow>
+            <TextView
+                android:id="@+id/tvSBPLbl"
+                android:text="SBP"
+                android:textSize="8pt" />
+            <TextView
+                android:id="@+id/tvDBPLbl"
+                android:text="DBP"
+                android:textSize="8pt" />
+			<TextView
+                android:id="@+id/tvRBPLbl"
+                android:text="RBP"
+                android:textSize="8pt" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:id="@+id/tvSBPvalue"
+                android:text="@string/zero"
+                android:textSize="8pt" />
+			<TextView
+                android:id="@+id/tvDBPvalue"
+                android:text="@string/zero"
+                android:textSize="8pt" />
+            <TextView
+                android:id="@+id/tvRBPvalue"
+                android:text="@string/zero"
+                android:textSize="8pt" />
+        </TableRow>
+	</TableLayout>
+    <TableLayout
+        android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:stretchColumns = "*" >
+		<TableRow>
+            <TextView
+                android:id="@+id/hrLbl"
+                android:text="HRbpm"
+                android:textSize="8pt" />
+            <EditText
+                android:id="@+id/hrValue"
+                android:text="11"
+                android:textSize="8pt"
+				android:background="@android:drawable/editbox_background"	/>
+			<TextView
+                android:id="@+id/bpLbl"
+                android:text="BP"
+                android:textSize="8pt" />
+            <EditText
+                android:id="@+id/bpValue"
+                android:text="111/11"
+                android:textSize="8pt"
+				android:background="@android:drawable/editbox_background"	/>
+        </TableRow>
+    </TableLayout>
+	<TableLayout
+        android:layout_width="fill_parent"
+	    android:layout_height="wrap_content" >
+		<TableRow>
+			<TextView
+                android:id="@+id/msgTxt"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+                android:text="@+string/guideline"
+                android:textSize="8pt"
+				android:editable="false"
+				android:singleLine="false"
+				android:scrollbars="vertical" />
+		</TableRow>
+    </TableLayout>
+</LinearLayout>
