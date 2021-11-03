@@ -15,11 +15,13 @@ This describes the privacy aspects of apps written by Lee Seldon and colleagues 
         -   Exercise Borneo - Stroke - exercises for people who have had a stroke. This  _app_  has been blocked by Google for some incomprehensible reason.
         -   PhysioFT Blood Pressure -  _app_  to estimate Blood Pressure (BP), Heart rate (HR) and blood Oxygen Level (SpO2) from a phone camera using Fourier Transform (FT) and Multi-Layer Perceptron (MLP).
         -   Happy Meter -  _app_  to guess your mood using the phone camera.
-    -   This Privacy Policy describes what happens to data and information you provide to any of these  _apps_.
-    -   This policy covers:
-        -   Information that you enter into an  _app_
-        -   Your choices regarding the collection and processing of your Personal Information.
-    -   This Privacy Policy does not apply to information collected through any other apps, websites or services.
+ 
+ 
+- This Privacy Policy describes what happens to data and information you provide to any of these  _apps_.
+- This policy covers:
+    -   Information that you enter into an  _app_
+    -   Your choices regarding the collection and processing of your Personal Information.
+-   This Privacy Policy does not apply to information collected through any other apps, websites or services.
 
 ### User consent
     
